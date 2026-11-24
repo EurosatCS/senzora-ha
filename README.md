@@ -1,8 +1,8 @@
 # Eurosat Meters pro Home Assistant
 
-[![Validate](https://github.com/EurosatCS/eurosat-meters-ha/actions/workflows/validate.yml/badge.svg)](https://github.com/EurosatCS/eurosat-meters-ha/actions/workflows/validate.yml)
-[![Tests](https://github.com/EurosatCS/eurosat-meters-ha/actions/workflows/tests.yml/badge.svg)](https://github.com/EurosatCS/eurosat-meters-ha/actions/workflows/tests.yml)
-[![Release](https://img.shields.io/github/v/release/EurosatCS/eurosat-meters-ha)](https://github.com/EurosatCS/eurosat-meters-ha/releases)
+[![Validate](https://github.com/EurosatCS/senzora-ha/actions/workflows/validate.yml/badge.svg)](https://github.com/EurosatCS/senzora-ha/actions/workflows/validate.yml)
+[![Tests](https://github.com/EurosatCS/senzora-ha/actions/workflows/tests.yml/badge.svg)](https://github.com/EurosatCS/senzora-ha/actions/workflows/tests.yml)
+[![Release](https://img.shields.io/github/v/release/EurosatCS/senzora-ha)](https://github.com/EurosatCS/senzora-ha/releases)
 
 Integrace načítá z vašeho účtu Eurosat stavy elektroměrů, vodoměrů a dalších měřičů
 a zobrazuje je v Home Assistantu jako senzory. Stačí zadat API klíč, nic se nepíše do YAML.
@@ -23,7 +23,7 @@ a zobrazuje je v Home Assistantu jako senzory. Stačí zadat API klíč, nic se 
 Od verze 2026.11 je HACS součástí Home Assistantu pod názvem Marketplace.
 
 1. Otevřete **Nastavení → Marketplace**.
-2. Přidejte vlastní repozitář odkazem `https://github.com/EurosatCS/eurosat-meters-ha`, typ **Integrace**.
+2. Přidejte vlastní repozitář odkazem `https://github.com/EurosatCS/senzora-ha`, typ **Integrace**.
 3. Při prvním přidání vlastního repozitáře se přihlaste účtem GitHub a potvrďte upozornění *I understand the risks*.
 4. Nainstalujte **Eurosat Meters** a restartujte Home Assistant.
 
@@ -32,7 +32,7 @@ stejný v HACS (nabídka vpravo nahoře → **Vlastní repozitáře**).
 
 ### Ručně
 
-1. Z [posledního vydání](https://github.com/EurosatCS/eurosat-meters-ha/releases/latest) stáhněte *Source code (zip)* a rozbalte ho.
+1. Z [posledního vydání](https://github.com/EurosatCS/senzora-ha/releases/latest) stáhněte *Source code (zip)* a rozbalte ho.
 2. Složku `custom_components/eurosat_meters` zkopírujte do `/config/custom_components/`. Pokud složka `custom_components` neexistuje, vytvořte ji.
 3. Restartujte Home Assistant.
 
@@ -77,7 +77,7 @@ Každá komunikační jednotka se zobrazí jako zařízení `Eurosat <IMEI>` a k
 3. Elektroměr přidejte v části pro elektřinu: hlavní jako odběr ze sítě, podružné jako jednotlivá zařízení.
 
 První sloupce se v grafu objeví po jedné až dvou hodinách. Měřiče v m³ se řadí jako voda;
-plynoměr by se proto zobrazil mezi vodoměry. Pokud ho máte, [založte issue](https://github.com/EurosatCS/eurosat-meters-ha/issues).
+plynoměr by se proto zobrazil mezi vodoměry. Pokud ho máte, [založte issue](https://github.com/EurosatCS/senzora-ha/issues).
 
 ### Tip: podružný vodoměr
 
@@ -114,7 +114,7 @@ rozdíl může krátce klesnout a `total_increasing` by to vyhodnotil jako vým�
 | V logu je „Could not load meter labels“ | Nepodařilo se načíst popisky. Na hodnoty to nemá vliv; senzory pojmenujte ručně. |
 | Chybí měřič, který v portálu vidíte | Klíč čte domovskou skupinu. Měřič z jiné skupiny přidejte jako další záznam integrace s vyplněným ID skupiny. |
 
-Chybu nahlaste přes [Issues](https://github.com/EurosatCS/eurosat-meters-ha/issues).
+Chybu nahlaste přes [Issues](https://github.com/EurosatCS/senzora-ha/issues).
 
 ## English
 
