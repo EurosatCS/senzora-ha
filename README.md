@@ -43,6 +43,21 @@ Home Assistantu. Zobrazuje se u každé vlastní integrace a nic neznamená.
 
 ## Nastavení
 
+### Doporučení: samostatný účet pro Home Assistant
+
+Integrace vidí všechno, co vidí účet, ke kterému API klíč patří. Proto klíč nevytvářejte
+pod svým hlavním účtem. V portálu Eurosat založte nového uživatele jen pro Home Assistant:
+
+1. Vytvořte nového uživatele (např. „Home Assistant“).
+2. V oprávněních mu zpřístupněte jen měřiče, které chcete v Home Assistantu vidět.
+3. Přihlaste se jako tento uživatel a vygenerujte API klíč.
+
+Home Assistant pak dostane jen ty senzory, které jste vybrali, a k ostatním datům se nedostane.
+Když budete chtít přístup zrušit, stačí zablokovat tohoto uživatele nebo jeho klíč.
+Vašeho hlavního účtu se to nedotkne.
+
+### Přidání integrace
+
 1. **Nastavení → Zařízení a služby → Přidat integraci** a vyhledejte **Eurosat Meters**.
 2. Vložte API klíč celý, včetně čísla před středníkem.
 3. Pole *ID skupiny* nechte prázdné. Vyplňuje se jen tehdy, když chcete číst jinou než domovskou skupinu.
@@ -112,7 +127,7 @@ rozdíl může krátce klesnout a `total_increasing` by to vyhodnotil jako vým�
 | Senzor je nedostupný | Měřič přes 31 dní nic neposlal; ověřte ho v portálu Eurosat. |
 | Hodnota se dlouho nemění | Podívejte se na atribut `measured_at`; zobrazuje se poslední odečet, který měřič poslal. |
 | V logu je „Could not load meter labels“ | Nepodařilo se načíst popisky. Na hodnoty to nemá vliv; senzory pojmenujte ručně. |
-| Chybí měřič, který v portálu vidíte | Klíč čte domovskou skupinu. Měřič z jiné skupiny přidejte jako další záznam integrace s vyplněným ID skupiny. |
+| Chybí měřič, který v portálu vidíte | Účet, ke kterému patří klíč, nemá k měřiči oprávnění; přidejte ho v portálu a počkejte na další aktualizaci. Klíč také čte jen domovskou skupinu. Měřič z jiné skupiny přidejte jako další záznam integrace s vyplněným ID skupiny. |
 
 Chybu nahlaste přes [Issues](https://github.com/EurosatCS/senzora-ha/issues).
 
@@ -122,7 +137,8 @@ Custom integration that reads electricity, water and other meter readings from t
 Eurosat REST API (`cars.eurosat.cz`) and exposes them as Home Assistant sensors.
 Install it from **Settings → Marketplace** (HACS on 2026.10 and older) by adding this
 repository as a custom repository of type *Integration*, then add **Eurosat Meters**
-under **Settings → Devices & services** and enter your API key. Energy (kWh) and water (m³)
+under **Settings → Devices & services** and enter your API key. We recommend creating a dedicated Eurosat user for Home Assistant
+with access only to the meters you want to see, and generating the API key under that user. Energy (kWh) and water (m³)
 sensors work directly in the Energy dashboard.
 
 ## Vývoj
