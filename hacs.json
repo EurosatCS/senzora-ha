@@ -1,0 +1,5 @@
+{
+  "name": "Eurosat Meters",
+  "render_readme": true,
+  "homeassistant": "2024.12.0"
+}

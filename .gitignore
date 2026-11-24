@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.coverage
+htmlcov/
+.vscode/
+.idea/
+.DS_Store
+# local Home Assistant test config, never commit secrets
+config/
+secrets.yaml
+*.zip
+publish.sh

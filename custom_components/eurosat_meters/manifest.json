@@ -1,0 +1,14 @@
+{
+  "domain": "eurosat_meters",
+  "name": "Eurosat Meters",
+  "codeowners": [
+    "@EurosatCS"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/EurosatCS/eurosat-meters-ha",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/EurosatCS/eurosat-meters-ha/issues",
+  "requirements": [],
+  "version": "0.1.1"
+}

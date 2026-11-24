@@ -1,0 +1,42 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Měřiče Eurosat",
+        "description": "Zadejte API klíč ke svému účtu Eurosat. Všechny měřiče dostupné pod tímto klíčem se přidají automaticky.",
+        "data": {
+          "api_key": "API klíč",
+          "group_id": "ID skupiny (nepovinné)"
+        },
+        "data_description": {
+          "group_id": "Nechte prázdné, pokud chcete použít svou domovskou skupinu."
+        }
+      },
+      "reauth_confirm": {
+        "title": "API klíč už neplatí",
+        "description": "Zadejte nový API klíč ke svému účtu Eurosat.",
+        "data": {
+          "api_key": "API klíč"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "API klíč byl odmítnut.",
+      "cannot_connect": "Nepodařilo se spojit s API Eurosat.",
+      "rate_limited": "Příliš mnoho požadavků. Zkuste to za chvíli znovu."
+    },
+    "abort": {
+      "already_configured": "Tento účet je už nastavený.",
+      "reauth_successful": "API klíč byl aktualizován."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Interval aktualizace (minuty)"
+        }
+      }
+    }
+  }
+}

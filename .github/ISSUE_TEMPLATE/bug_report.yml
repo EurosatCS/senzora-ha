@@ -1,0 +1,39 @@
+name: Nahlásit chybu / Bug report
+description: Něco nefunguje, jak má.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Nevkládejte sem svůj API klíč** (ani v logu nebo na snímku obrazovky).
+        **Do not paste your API key** here, in logs or in screenshots.
+  - type: input
+    id: ha_version
+    attributes:
+      label: Verze Home Assistantu
+      placeholder: "2026.11.2"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Verze integrace
+      placeholder: "0.1.1"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: Co se děje a co jste čekali
+    validations:
+      required: true
+  - type: textarea
+    id: meter
+    attributes:
+      label: Typ měřiče a jednotka (kWh, m3, …)
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log
+      description: Nastavení → Systém → Protokoly, filtr „eurosat“.
+      render: text

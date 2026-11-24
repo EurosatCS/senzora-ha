@@ -1,0 +1,22 @@
+name: Release check
+
+# Runs when you publish a GitHub release. It fails if the tag does not match
+# the version in manifest.json, so Marketplace never offers a mislabelled release.
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tag matches manifest version
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          manifest=$(jq -r .version custom_components/eurosat_meters/manifest.json)
+          echo "tag=$tag manifest=$manifest"
+          test "$tag" = "$manifest"
